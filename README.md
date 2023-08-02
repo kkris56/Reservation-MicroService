@@ -25,6 +25,7 @@ How to request data:
     If anything at all is entered for <avail str>, the specified times will be marked as 'available'.
 
   example request:
+  
     def send_list_via_zmq(list_data):
       context = zmq.Context()
       socket = context.socket(zmq.PUSH)
