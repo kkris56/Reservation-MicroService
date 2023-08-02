@@ -5,18 +5,18 @@ How to request data:
   For each request, a list must be sent to the service via zmq. 
   The list that is sent via the zmq pipeline must be in a specific order based on the request being made.
   
-  List for "create db": ['create db', <filename>]
+  List for "create db": ('create db', <filename>)
   
     <filename> is a string provided by the user. The json db that contains the dates and times will be named after this.
     It is recommended that this name be related to what the admin is using it for (e.g. restaurant or hotel name)
 
-  List for "show": ['show', <filename>, <start date>, <end date>]
+  List for "show": ('show', <filename>, <start date>, <end date>)
   
     Start date and end date can be entered as either integers or strings as they will be converted to strings or integers within the service as needed.
     The times between the start and end dates provided will be what is sent to the user.
     <filename> corresponds to the name used to create the json db. Must be a string.
 
-  List for "edit": ['edit', <filename>, <start date>, <end date>, <initial time>, <final time>, <avail_str>(optional)]
+  List for "edit": ('edit', <filename>, <start date>, <end date>, <initial time>, <final time>, <avail_str>(optional))
   
     start date is the starting point for the edit and the end date is the end point.
     The initial and final time entries are the starting time of an edit to the final time.
