@@ -103,8 +103,8 @@ def show_times(filename, start_date, end_date):
     time_data = json.load(file)
     ret_data = []
 
-    for day in range(start_date, (end_date+1)):
-        ret_data.append({day: time_data[str(day)]})
+    for day in range(int(start_date), (int(end_date)+1)):
+        ret_data.append({str(day): time_data[str(day)]})
 
     file.close()
 
