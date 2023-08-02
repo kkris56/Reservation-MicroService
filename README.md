@@ -7,24 +7,27 @@ How to request data:
   
   List for "create db": ('create db', <filename>)
   
+    ('create db', <filename>)
     <filename> is a string provided by the user. The json db that contains the dates and times will be named after this.
     It is recommended that this name be related to what the admin is using it for (e.g. restaurant or hotel name)
 
   List for "show": ('show', <filename>, <start date>, <end date>)
   
+    ('show', <filename>, <start date>, <end date>)
     Start date and end date can be entered as either integers or strings as they will be converted to strings or integers within the service as needed.
     The times between the start and end dates provided will be what is sent to the user.
     <filename> corresponds to the name used to create the json db. Must be a string.
 
   List for "edit": ('edit', <filename>, <start date>, <end date>, <initial time>, <final time>, <avail_str>(optional))
   
+    ('edit', <filename>, <start date>, <end date>, <initial time>, <final time>, <avail_str>(optional))
     start date is the starting point for the edit and the end date is the end point.
     The initial and final time entries are the starting time of an edit to the final time.
     Times must be written as strings (e.g. '00:30', '12:30', '17:00'). Military time must be used
     If nothing is entered for <avail str>, the status of the times in the range specified by the user or admin will be marked as booked.
     If anything at all is entered for <avail str>, the specified times will be marked as 'available'.
 
-  example request:
+  example request using a function:
   
     def send_list_via_zmq(list_data):
       context = zmq.Context()
